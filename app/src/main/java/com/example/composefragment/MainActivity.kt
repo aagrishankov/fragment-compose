@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.composefragment.blue.addBlueScreen
 import com.example.composefragment.red.addRedScreen
@@ -20,11 +21,16 @@ class MainActivity : FragmentActivity() {
             ComposeFragmentTheme {
                 NavHost(
                     navController = navController,
-                    startDestination = START_SCREEN,
+                    startDestination = "main_fragment",
                 ) {
-                    addStartScreen(navController)
+
+                    composable("main_fragment") {
+                        MainFragment(navController)
+                    }
+//
+//                    addStartScreen(navController)
                     addBlueScreen(navController)
-                    addRedScreen(navController)
+//                    addRedScreen(navController)
                 }
             }
         }

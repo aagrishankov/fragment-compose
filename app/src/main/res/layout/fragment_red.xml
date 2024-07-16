@@ -13,4 +13,5 @@
         android:text="Red Fragment with XML-view"
         android:textSize="24dp" />
 
+
 </LinearLayout>
